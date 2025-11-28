@@ -59,9 +59,3 @@ Puedes consultar los endpoints en:
 
 http://localhost:8080/api/v1/swagger-ui/index.html
 
----
-
-## Detener el proyecto
-
-Para detener todos los contenedores:
-docker-compose down
