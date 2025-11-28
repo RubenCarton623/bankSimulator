@@ -26,6 +26,7 @@ services:
       - URL_DATASOURCE=jdbc:postgresql://postgres:5432/postgres
       - USERNAME_DATASOURCE=prueba
       - PASS_DATASOURCE=prueba
+      - URL_ORIGIN=http://localhost:3000
     depends_on:
       - postgres
     volumes:
