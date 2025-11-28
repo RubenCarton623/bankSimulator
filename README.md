@@ -5,14 +5,15 @@ Este proyecto contiene una aplicación **Full Stack** compuesta por un backend, 
 ---
 
 ## Estructura del proyecto
-/
+
+```bash
 ├── back-end
 ├── front-end
 ├── DB
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
-
+```
 ---
 
 ## Requisitos previos
@@ -55,6 +56,8 @@ http://localhost:8080
 
 ### Swagger (Documentación de la API)
 Puedes consultar los endpoints en:
+
+http://localhost:8080/api/v1/swagger-ui/index.html
 
 ---
 
