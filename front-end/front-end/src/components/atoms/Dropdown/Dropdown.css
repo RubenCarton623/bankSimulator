@@ -1,0 +1,62 @@
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.dropdown-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-font);
+}
+
+.dropdown { 
+  padding: 1rem 2.75rem 1rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 22px;
+  font-family: inherit;
+  line-height: 1.5;
+  min-height: 48px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(18, 8, 153, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover:not(:disabled) {
+  border-color: #999999;
+}
+
+.dropdown:disabled,
+.dropdown-disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dropdown-error {
+  border-color: var(--error) !important;
+}
+
+.dropdown-error:focus {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.1) !important;
+}
+
+.dropdown option {
+  padding: 0.5rem;
+}

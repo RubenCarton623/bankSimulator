@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: prueba
+      POSTGRES_PASSWORD: prueba
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./DB.sql:/docker-entrypoint-initdb.d/DB.sql
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./back-end
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_PORT=8080
+      - URL_DATASOURCE=jdbc:postgresql://postgres:5432/postgres
+      - USERNAME_DATASOURCE=prueba
+      - PASS_DATASOURCE=prueba
+    depends_on:
+      - postgres
+    volumes:
+      - ./rvera/src/main/resources/application.properties:/app/application.properties
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+    
+networks:
+  app-network:
+    driver: bridge

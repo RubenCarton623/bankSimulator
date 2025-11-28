@@ -1,0 +1,70 @@
+.date-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.date-field-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-font);
+}
+
+.date-field {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.5;
+  min-height: 48px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.date-field:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(18, 8, 153, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.date-field:hover:not(:disabled) {
+  border-color: var(--color-secondary-hover);
+}
+
+.date-field-error {
+  border-color: var(--color-error);
+}
+
+.date-field-error:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.date-field-disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.date-field-error-message {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  margin-top: var(--spacing-xs);
+}
+
+/* Estilos personalizados para el calendario */
+.date-field::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.date-field::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
